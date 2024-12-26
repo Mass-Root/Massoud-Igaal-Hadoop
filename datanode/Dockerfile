@@ -1,0 +1,15 @@
+# build from hadoop-base:3.2.1 that we built before using docker build -t hadoop-base:3.3.6 .
+FROM hadoop-cluster:3.3.6-massoud-igaal
+
+HEALTHCHECK CMD curl -f http://localhost:9866/ || exit 1
+
+ENV HDFS_CONF_dfs_datanode_data_dir=file:///hadoop/dfs/data
+RUN mkdir -p /hadoop/dfs/data
+VOLUME /hadoop/dfs/data
+
+ADD run.sh /run.sh
+RUN chmod a+x /run.sh
+
+EXPOSE 9866
+
+CMD ["/run.sh"]

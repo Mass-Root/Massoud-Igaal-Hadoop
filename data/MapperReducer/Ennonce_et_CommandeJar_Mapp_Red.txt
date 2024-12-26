@@ -1,0 +1,10 @@
+hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.3.3.jar -mapper Mapper_X.py -reducer Reducer_X.py -file Mapper_X.py -file Reducer_X.py -input /data -output /outputX
+
+
+Exercice :
+
+Q1 : Déterminer le nombre de transactions de vente par item
+Q2 : Déterminer la valeur totale de vente par store
+Q3 : Déterminer quel est le store ayant la valeur maximale de vente
+Q4 : Déterminer la valeur moyenne de vente par payement
+
